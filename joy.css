@@ -1,0 +1,88 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeb3b;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    background-color: #f57f20;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Emotion Sections */
+.emotion-section {
+    padding: 40px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px 0;
+}
+
+.emotion-section h2, .emotion-section h3 {
+    color: #f57f20;
+}
+
+/* Grid Layout for Movies */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.movie {
+    text-align: center;
+    cursor: pointer; /* Pointer cursor for clickable effect */
+    transition: transform 0.3s ease; /* Smooth transition for movie container */
+    margin: 20px;
+}
+
+/* Movie Image Styling */
+.movie img {
+    width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+/* Hover Effects */
+.movie:hover {
+    transform: scale(1.1); /* Scale movie container slightly on hover */
+}
+
+.movie:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: #f57f20;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}

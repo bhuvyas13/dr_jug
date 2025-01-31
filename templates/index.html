@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Analyzer</title>
+    <style>
+        /* Add styles to make the video cover the entire background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Make sure video stays in the background */
+        }
+
+        /* Your content styles */
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+        }
+        
+        .form-container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+        <source src="{{ url_for('static', filename='lantern.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Dream Analyzer</h1>
+
+        <!-- Your form here for dream analysis or story creation -->
+        <div class="form-container">
+            <form method="POST">
+                <label for="dream">Enter your dream:</label><br>
+                <textarea id="dream" name="dream" rows="4" cols="50"></textarea><br><br>
+                <input type="submit" value="Analyze Dream">
+            </form>
+
+            {% if interpretation %}
+                <h2>Interpretation:</h2>
+                <ul>
+                    {% for line in interpretation %}
+                        <li>{{ line }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            
+            <form method="POST">
+                <label for="words">Enter 11 words for story:</label><br>
+                <input type="text" id="words" name="words" placeholder="word1, word2, ..., word11"><br><br>
+                <input type="submit" value="Generate Story">
+            </form>
+
+            {% if story %}
+                <h2>Generated Story:</h2>
+                <p>{{ story }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

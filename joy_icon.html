@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Joy Character from Inside Out - Accurate Design">
+  <title>Joy Character Design</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7e288; /* Joy-themed background color */
+    }
+
+    /* Container for the character */
+    .character {
+      position: relative;
+      width: 180px;
+      height: 400px;
+    }
+
+    /* Head */
+    .head {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 130px;
+      background-color: #ffddb5; /* Skin color */
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hair */
+    .hair {
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      width: 110px;
+      height: 110px;
+      background-color: #4a90e2; /* Joy's blue hair */
+      clip-path: polygon(20% 0%, 50% 10%, 80% 5%, 100% 50%, 80% 100%, 60% 75%, 40% 100%, 20% 50%);
+    }
+
+    /* Eyes */
+    .eye {
+      position: absolute;
+      top: 40px;
+      width: 20px;
+      height: 30px;
+      background-color: white;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+
+    .eye.left {
+      left: 30px;
+    }
+
+    .eye.right {
+      right: 30px;
+    }
+
+    .eye::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      width: 12px;
+      height: 12px;
+      background-color: #0094ff; /* Blue iris color */
+      border-radius: 50%;
+    }
+
+    /* Mouth */
+    .mouth {
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 35px;
+      background-color: #f78c6c; /* Mouth color */
+      border-radius: 0 0 30px 30px;
+      border-top: 2px solid #000;
+    }
+
+    /* Body */
+    .body {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 220px;
+      background-color: #f7f28f; /* Joy's yellow dress */
+      border-radius: 60px 60px 10px 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Dress details (small flower patterns) */
+    .pattern {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #d8d88f;
+      border-radius: 50%;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .pattern.one {
+      top: 50px;
+      left: 40px;
+    }
+
+    .pattern.two {
+      top: 90px;
+      right: 40px;
+    }
+
+    /* Arms */
+    .arm {
+      position: absolute;
+      top: 150px;
+      width: 20px;
+      height: 80px;
+      background-color: #ffddb5;
+      border-radius: 20px;
+    }
+
+    .arm.left {
+      left: -25px;
+      transform: rotate(20deg);
+    }
+
+    .arm.right {
+      right: -25px;
+      transform: rotate(-20deg);
+    }
+
+    /* Legs */
+    .leg {
+      position: absolute;
+      top: 300px;
+      width: 20px;
+      height: 60px;
+      background-color: #ffddb5;
+      border-radius: 20px;
+    }
+
+    .leg.left {
+      left: 30px;
+    }
+
+    .leg.right {
+      right: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="character">
+    <!-- Head -->
+    <div class="head">
+      <!-- Eyes -->
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <!-- Mouth -->
+      <div class="mouth"></div>
+      <!-- Hair -->
+      <div class="hair"></div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+      <!-- Dress Patterns -->
+      <div class="pattern one"></div>
+      <div class="pattern two"></div>
+    </div>
+
+    <!-- Arms -->
+    <div class="arm left"></div>
+    <div class="arm right"></div>
+
+    <!-- Legs -->
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+  </div>
+</body>
+</html>

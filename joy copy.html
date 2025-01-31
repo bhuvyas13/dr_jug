@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joy from Inside Out Animation</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #f7cac9, #ffd7be);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .joy-container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+        }
+
+        /* Hair */
+        .hair {
+            position: absolute;
+            width: 120px;
+            height: 70px;
+            background-color: #f9e135;
+            border-radius: 50% 50% 0 0;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            z-index: 1;
+        }
+
+        .spike {
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            background-color: #f9e135;
+            border-radius: 50%;
+            top: -30px;
+        }
+
+        .spike:nth-child(1) { left: 10px; transform: rotate(-20deg); }
+        .spike:nth-child(2) { left: 35px; transform: rotate(0deg); }
+        .spike:nth-child(3) { left: 70px; transform: rotate(20deg); }
+        .spike:nth-child(4) { left: 100px; transform: rotate(40deg); }
+        .spike:nth-child(5) { left: 130px; transform: rotate(60deg); }
+
+        /* Face */
+        .face {
+            position: absolute;
+            width: 100px;
+            height: 120px;
+            background-color: #8DD3F2;
+            border-radius: 50%;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* Eyes */
+        .eye {
+            position: absolute;
+            width: 25px;
+            height: 40px;
+            background-color: #FFFFFF;
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        .eye.left {
+            left: 15px;
+        }
+
+        .eye.right {
+            right: 15px;
+        }
+
+        .pupil {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Mouth */
+        .mouth {
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            background-color: #FF69B4;
+            border-radius: 0 0 25px 25px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Body */
+        .body {
+            position: absolute;
+            width: 100px;
+            height: 150px;
+            background-color: #A1D6E2;
+            border-radius: 50% 50% 0 0;
+            top: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        /* Dress */
+        .dress {
+            position: absolute;
+            width: 100px;
+            height: 130px;
+            background-color: #6AB04C;
+            border-radius: 20px;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+
+        /* Arms */
+        .arm {
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            background-color: #8DD3F2;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .left-arm {
+            left: -30px;
+            transform: rotate(30deg);
+        }
+
+        .right-arm {
+            left: 30px;
+            transform: rotate(-30deg);
+        }
+
+        /* Legs */
+        .leg {
+            position: absolute;
+            width: 30px;
+            height: 80px;
+            background-color: #8DD3F2;
+            border-radius: 10px;
+            bottom: 0;
+        }
+
+        .left-leg {
+            left: 15px;
+        }
+
+        .right-leg {
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="joy-container">
+        <div class="hair">
+            <div class="spike"></div>
+            <div class="spike"></div>
+            <div class="spike"></div>
+            <div class="spike"></div>
+            <div class="spike"></div>
+        </div>
+        <div class="face">
+            <div class="eye left">
+                <div class="pupil"></div>
+            </div>
+            <div class="eye right">
+                <div class="pupil"></div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+        <div class="body">
+            <div class="dress"></div>
+            <div class="arm left-arm"></div>
+            <div class="arm right-arm"></div>
+            <div class="leg left-leg"></div>
+            <div class="leg right-leg"></div>
+        </div>
+    </div>
+</body>
+</html>

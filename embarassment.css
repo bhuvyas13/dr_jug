@@ -1,0 +1,86 @@
+/* Global Styles for Embarrassment */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8c7cc;  /* Light blush pink to evoke embarrassment */
+    color: #333;  /* Slightly darker text color for contrast */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    background-color: #d9534f;  /* Deep red-pink to signify the intensity of embarrassment */
+    color: #fff0f5;  /* Light text for contrast */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff0f5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Emotion Sections */
+.emotion-section {
+    padding: 40px 0;
+    background-color: rgba(255, 255, 255, 0.85);  /* Soft, transparent white background */
+    margin: 20px 0;
+}
+
+.emotion-section h2, .emotion-section h3 {
+    color: #d9534f;  /* Same red-pink shade for headings */
+}
+
+/* Grid Layout for Movies */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.movie {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px;
+}
+
+.movie img {
+    width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.movie:hover {
+    transform: scale(1.1);
+}
+
+.movie:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: #d9534f;  /* Same red-pink shade */
+    color: #fff0f5;
+}
+
+footer a {
+    color: #fff0f5;
+    text-decoration: none;
+    margin-right: 15px;
+}

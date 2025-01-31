@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Out Emotion Chatbot</title>
+    <style>
+        /* Dreamy Background */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #4c67ff, #1e1e2f);
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating clouds */
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            width: 200px;
+            height: 100px;
+            border-radius: 50%;
+            filter: blur(15px);
+            animation: float 10s infinite alternate ease-in-out;
+        }
+        .cloud:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; }
+        .cloud:nth-child(2) { top: 30%; left: 50%; animation-duration: 14s; }
+        .cloud:nth-child(3) { top: 60%; left: 70%; animation-duration: 16s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(-10px); }
+            100% { transform: translateY(15px) translateX(10px); }
+        }
+
+        /* Chatbox Container */
+        .chat-container {
+            width: 400px;
+            background: rgba(30, 30, 50, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Chatbox */
+        .chat-box {
+            height: 350px;
+            overflow-y: auto;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Chat Bubbles */
+        .message {
+            padding: 10px;
+            border-radius: 15px;
+            margin: 10px 0;
+            max-width: 80%;
+            word-wrap: break-word;
+            font-size: 15px;
+            display: inline-block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .user-message {
+            background: linear-gradient(135deg, #4CAF50, #3a8d3a);
+            align-self: flex-end;
+            text-align: right;
+        }
+        .bot-message {
+            background: rgba(255, 255, 255, 0.2);
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        /* Input Section */
+        .input-container {
+            display: flex;
+            margin-top: 10px;
+        }
+        select, input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #444;
+            color: #fff;
+        }
+        button {
+            background: #f4d03f;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ffcc00;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating dreamy clouds -->
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+
+    <div class="chat-container">
+        <h2>Inside Out Emotion Chatbot</h2>
+        <p>Select an emotion, and I will talk to you as that emotion!</p>
+        <select id="emotionSelect">
+            <option value="joy">Joy 😊</option>
+            <option value="sadness">Sadness 😢</option>
+            <option value="anger">Anger 😡</option>
+            <option value="fear">Fear 😨</option>
+            <option value="disgust">Disgust 🤢</option>
+        </select>
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">Hello! Select an emotion to start chatting.</div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let selectedEmotion = "joy"; // Default emotion
+
+        document.getElementById("emotionSelect").addEventListener("change", function() {
+            selectedEmotion = this.value;
+            document.getElementById("chatBox").innerHTML = `<div class="message bot-message">You've chosen ${this.options[this.selectedIndex].text}. Let's chat!</div>`;
+        });
+
+        function sendMessage() {
+            let inputField = document.getElementById("userInput");
+            let message = inputField.value.trim();
+            if (message === "") return;
+
+            let chatBox = document.getElementById("chatBox");
+
+            // Add user message
+            let userMessage = document.createElement("div");
+            userMessage.classList.add("message", "user-message");
+            userMessage.innerText = message;
+            chatBox.appendChild(userMessage);
+            inputField.value = "";
+
+            // Scroll to bottom
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                let botMessage = document.createElement("div");
+                botMessage.classList.add("message", "bot-message");
+                botMessage.innerText = getEmotionResponse(selectedEmotion, message);
+                chatBox.appendChild(botMessage);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+
+        function getEmotionResponse(emotion, userMessage) {
+            const responses = {
+                "joy": [
+                    "Yay! That sounds amazing! Keep smiling! 😊",
+                    "Wow! That makes me so happy to hear! 🎉",
+                    "You're such a sunshine! Keep shining! ☀️"
+                ],
+                "sadness": [
+                    "Oh no! But remember, every storm passes. 💙",
+                    "You are strong, and this will get better. 🌈",
+                    "Sending you a big, warm virtual hug! 🤗"
+                ],
+                "anger": [
+                    "Take a deep breath. You are in control. 💪",
+                    "It's okay to feel angry. Try to express it healthily. 💖",
+                    "Let’s find something positive to focus on together. 🌿"
+                ],
+                "fear": [
+                    "It's okay to be scared. But remember, you are brave! 🌟",
+                    "Try to breathe slowly. Everything will be fine. 🧘",
+                    "I'm here for you. You're not alone! 💙"
+                ],
+                "disgust": [
+                    "Eww, that sounds gross! I totally get it! 🤢",
+                    "Yikes! That must have been awful. 😖",
+                    "Oh no, let's talk about something better! 🌸"
+                ]
+            };
+
+            let randomIndex = Math.floor(Math.random() * responses[emotion].length);
+            return responses[emotion][randomIndex];
+        }
+    </script>
+
+</body>
+</html>

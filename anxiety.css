@@ -1,0 +1,70 @@
+/* Global Styles for Anxiety */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #b0c4de;  /* Light steel blue associated with anxiety */
+    color: #333;  /* Darker text for contrast */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Header Styling */
+header {
+    padding: 20px;
+    background-color: #4b6584;  /* Dark muted blue to evoke anxiety */
+    color: #f8f9fa;  /* Light text color for contrast */
+}
+
+/* Emotion Sections */
+.emotion-section {
+    padding: 40px 0;
+    background-color: rgba(255, 255, 255, 0.8);  /* Slightly transparent white background */
+    margin: 20px 0;
+}
+
+.emotion-section h2, .emotion-section h3 {
+    color: #4b6584;  /* Dark blue for headings */
+}
+
+/* Grid Layout for Movies */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.movie {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px;
+}
+
+.movie img {
+    width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.movie:hover {
+    transform: scale(1.1);
+}
+
+.movie:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: #4b6584;  /* Same dark blue */
+    color: #f8f9fa;
+}
+
+footer a {
+    color: #f8f9fa;
+    text-decoration: none;
+    margin-right: 15px;
+}

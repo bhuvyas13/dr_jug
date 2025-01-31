@@ -1,0 +1,87 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('bg1.jpg'); /* Set background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* Black overlay with 70% opacity */
+    z-index: -1; /* Place behind the content */
+}
+
+/* Header */
+header {
+    padding: 20px;
+    background-color: transparent; /* Remove gray background */
+    border: none; /* Remove any border */
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #000000; /* White text for visibility */
+}
+
+p {
+    color: #000000; /* Light gray color for text visibility */
+    font-size: 1.2em;
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    margin: 50px auto;
+    max-width: 1800px; /* Adjust max width to fit 5 emotions per row */
+}
+
+/* Emotion Container */
+.emotion-container {
+    margin: 20px; /* Add space around each emotion */
+    text-align: center; /* Center the text under images */
+    cursor: pointer; /* Pointer cursor for clickable effect */
+    flex-basis: calc(20% - 40px); /* Take up 1/5th of the row, including margins */
+}
+
+/* Emotion Image Styles */
+.emotion-image {
+    width: 350px; /* Set image width */
+    height: 350px; /* Set image height */
+    transition: transform 0.3s; /* Smooth transition for image scaling */
+}
+
+/* Hover Effects */
+.emotion-container:hover .emotion-image {
+    transform: scale(1.1); /* Scale the image slightly on hover */
+}
+
+/* Emotion Name Styles */
+.emotion-name {
+    font-size: 1.5em;
+    color: #000000; /* White text for visibility */
+    margin-top: 10px; /* Space between image and name */
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: transparent; /* Remove gray background */
+    border: none; /* Remove border */
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: #000000; /* White text for visibility */
+}

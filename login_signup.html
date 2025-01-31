@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="login_signup.css">
+</head>
+<body>
+
+    <!-- Container for the split design -->
+    <div class="container">
+        <!-- Left panel with login option -->
+        <div class="left-panel">
+            <h2>Welcome Back!</h2>
+            <p>To keep connected with us, please login with your personal info</p>
+            <img src="joyy.webp" alt="Joy" class="character-img">
+            
+            <!-- Login Form -->
+            <form id="loginForm">
+                <button type="submit" class="login-btn">Login</button> <!-- Button for login -->
+            </form>
+        </div>
+
+        <!-- Right panel for sign up -->
+        <div class="right-panel">
+            <h2>Create Account</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName">
+                    <span id="firstNameError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName">
+                    <span id="lastNameError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <span id="passwordError" class="error"></span>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+
+            <!-- Already a user link -->
+            <p class="already-user">
+                Already a user? <a href="login.html">Log in</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="login_signup.js"></script>
+</body>
+</html>

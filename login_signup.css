@@ -1,0 +1,178 @@
+/* General styling for the body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', sans-serif; /* Playful font for Inside Out feel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #F5F7FA, #FFEDB5, #F8F1E5); /* Light pastel background */
+}
+
+/* Container for the form */
+.container {
+    display: flex;
+    width: 900px;
+    height: 550px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Left side for welcome message */
+.left-panel {
+    background-color: #FDCB6E; /* Joy-inspired bright yellow */
+    flex: 1;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px 0 0 30px;
+    position: relative;
+}
+
+.left-panel h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #3F51B5; /* Darker blue for contrast */
+}
+
+.left-panel p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #34495E; /* Slightly darker text */
+}
+
+.left-panel button {
+    background-color: #0984E3; /* Blue color matching Sadness */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.left-panel button:hover {
+    transform: scale(1.05);
+}
+
+/* Character image (like Joy or others) */
+.character-img {
+    width: 150px;
+    position: absolute;
+    bottom: 20px;
+}
+
+/* Right side for form */
+.right-panel {
+    flex: 1.5;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FF7675; /* Anger-inspired red */
+    border-radius: 0 30px 30px 0;
+    position: relative;
+}
+
+.right-panel h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #F5F7FA; /* Light color for readability */
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #F5F7FA;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #FAB1A0; /* Light border */
+    border-radius: 15px;
+    background-color: #FFEAA7;
+}
+
+.form-group input:focus {
+    border-color: #FF7675;
+    outline: none;
+    background-color: #FFF5E5;
+}
+
+.form-group .error {
+    color: #FF6F61;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.right-panel button {
+    background-color: #00CEC9; /* Cool tone for balance */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-panel button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .left-panel, .right-panel {
+        flex: none;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+}
+/* Add some styling for the already user link */
+.already-user {
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+}
+
+.already-user a {
+    color: #00CEC9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-user a:hover {
+    text-decoration: underline;
+}

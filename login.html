@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- Container for the split design -->
+    <div class="container">
+        <!-- Left panel with sign-up option -->
+        <div class="left-panel">
+            <h2>New Here?</h2>
+            <p>Sign up now and start exploring!</p>
+            <img src="joyy.webp" alt="Joy" class="character-img">
+            
+            <!-- Sign up button -->
+            <form id="signupFormRedirect">
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Right panel for login -->
+        <div class="right-panel">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password">
+                    <span id="passwordError" class="error"></span>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <!-- Not a user yet? link -->
+            <p class="not-user">
+                Not a user yet? <a href="signup.html">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

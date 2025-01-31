@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Water Wave Text Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h2 {
+            position: relative;
+            font-size: 9em;
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            display: inline-block;
+            -webkit-text-stroke: 2px black; /* Black outline around letters */
+            color: transparent;
+            background: linear-gradient(90deg, red, red, orange, orange, yellow, yellow, green, green, blue, blue, indigo, indigo, violet, violet); /* Sequential rainbow gradient */
+            background-size: 200%; /* To make the wave move smoothly */
+            background-clip: text;
+            -webkit-background-clip: text; /* Clip the background to the text */
+            animation: rainbow-fill 10s infinite ease-in-out; /* Animate the gradient */
+        }
+
+        /* Keyframe animation to create the sequential rainbow fill */
+        @keyframes rainbow-fill {
+            0% {
+                background-position: 100%; /* Starts with the rainbow gradient at the right */
+            }
+            50% {
+                background-position: 0%; /* Moves the gradient to the left */
+            }
+            100% {
+                background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); /* Final rainbow gradient */
+                background-size: 100%;
+            }
+        }
+
+        footer {
+            color: rgba(0, 0, 0, 0.35); /* Footer in semi-transparent black */
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.35);
+        }
+
+        footer a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 700px) {
+            h2 {
+                font-size: 5em;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h2 {
+                font-size: 3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h2>INSIDE OUT</h2>
+
+    <footer>Inspired from <a href="https://youtu.be/Tf6qm5JMUXQ" target="_blank">this tutorial</a></footer>
+
+    <script>
+        // JavaScript is currently not needed, but interaction logic can be added here if necessary
+    </script>
+</body>
+</html>
